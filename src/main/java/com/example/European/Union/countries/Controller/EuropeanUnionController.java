@@ -20,6 +20,7 @@ public class EuropeanUnionController {
         this.europeanUnionService = europeanUnionService;
     }
 
+
     @GetMapping("/countries")
     public List<EUCountry> getAllEUCountries(){
         return  europeanUnionService.getAllCountries();

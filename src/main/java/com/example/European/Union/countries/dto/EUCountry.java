@@ -1,18 +1,20 @@
 package com.example.European.Union.countries.dto;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
+
 public class EUCountry {
 
-    private String name;
-
-    private String capital;
-
-    private int population;
-
-    private double area;
-
-    private String currencies;
-
-    private double population_density;
+    public String name;
+    public String capital;
+    public List<Currency> currencies;
+    public int population;
+    public double area;
+    public boolean independent;
 
     public String getName() {
         return name;
@@ -46,19 +48,20 @@ public class EUCountry {
         this.area = area;
     }
 
-    public String getCurrencies() {
+    public List<Currency> getCurrencies() {
         return currencies;
     }
 
-    public void setCurrencies(String currencies) {
+    public void setCurrencies(List<Currency> currencies) {
         this.currencies = currencies;
     }
 
-    public double getPopulation_density() {
-        return population_density;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    public boolean isIndependent() {
+        return independent;
     }
 
-    public void setPopulation_density(double population_density) {
-        this.population_density = population_density;
+    public void setIndependent(boolean independent) {
+        this.independent = independent;
     }
 }
