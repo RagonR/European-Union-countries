@@ -1,7 +1,6 @@
 package com.example.European.Union.countries.Service;
 
 import com.example.European.Union.countries.dto.EUCountry;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -38,48 +37,62 @@ public class EuropeanUnionService {
     public List<EUCountry> displayEUCountries() {
         List<EUCountry> euCountries = getAllCountries();
 
-        List<EUCountry> euCountriesSorted = new ArrayList<EUCountry>();
-        for(EUCountry country : euCountries){
-            EUCountry euCountry = new EUCountry();
-            euCountry.setName(country.getName());
-            euCountry.setPopulation(country.getPopulation());
-            euCountry.setCapital(country.getCapital());
-            euCountry.setCurrencies(country.getCurrencies());
-            euCountriesSorted.add(euCountry);
+        List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
+        for (EUCountry country : euCountries) {
+            EUCountry euCountry = new EUCountry(country.getName(), country.getCapital(), country.getCurrencies(), country.getPopulation());
+            euCountriesRequiredElements.add(euCountry);
         }
-        return euCountriesSorted;
+        return euCountriesRequiredElements;
     }
 
     public List<EUCountry> getTop10Population() {
         List<EUCountry> euCountries = displayEUCountries();
 
+        List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
+        for (EUCountry country : euCountries) {
+            EUCountry euCountry = new EUCountry(country.getName(), country.getPopulation());
+            euCountriesRequiredElements.add(euCountry);
+        }
+
         Comparator<EUCountry> compareByPop =
                 (EUCountry o1, EUCountry o2) -> o1.getPopulation().compareTo(o2.getPopulation());
 
-        euCountries.sort(compareByPop.reversed());
+        euCountriesRequiredElements.sort(compareByPop.reversed());
 
-        return euCountries.stream().limit(10).collect(Collectors.toList());
+        return euCountriesRequiredElements.stream().limit(10).collect(Collectors.toList());
     }
 
     public List<EUCountry> getTop10Area() {
         List<EUCountry> euCountries = getAllCountries();
 
+        List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
+        for (EUCountry country : euCountries) {
+            EUCountry euCountry = new EUCountry(country.getName(), country.getArea());
+            euCountriesRequiredElements.add(euCountry);
+        }
+
         Comparator<EUCountry> compareByArea =
                 (EUCountry o1, EUCountry o2) -> o1.getArea().compareTo(o2.getArea());
 
-        euCountries.sort(compareByArea.reversed());
+        euCountriesRequiredElements.sort(compareByArea.reversed());
 
-        return euCountries.stream().limit(10).collect(Collectors.toList());
+        return euCountriesRequiredElements.stream().limit(10).collect(Collectors.toList());
     }
 
     public List<EUCountry> getTop10Density() {
         List<EUCountry> euCountries = getAllCountries();
 
+        List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
+        for (EUCountry country : euCountries) {
+            EUCountry euCountry = new EUCountry(country.getName(), country.getPopulation(), country.getArea());
+            euCountriesRequiredElements.add(euCountry);
+        }
+
         Comparator<EUCountry> compareByDensity =
                 (EUCountry o1, EUCountry o2) -> o1.getDensity().compareTo(o2.getDensity());
 
-        euCountries.sort(compareByDensity.reversed());
+        euCountriesRequiredElements.sort(compareByDensity.reversed());
 
-        return euCountries.stream().limit(10).collect(Collectors.toList());
+        return euCountriesRequiredElements.stream().limit(10).collect(Collectors.toList());
     }
 }

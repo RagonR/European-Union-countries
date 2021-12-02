@@ -14,14 +14,28 @@ public class EUCountry {
     public Integer population;
     public Double area;
     public boolean independent;
+    public Double density;
 
-    public EUCountry(String name, String capital, List<Currency> currencies, int population, double area, boolean independent) {
+     public EUCountry(String name, String capital, List<Currency> currencies, Integer population) {
         this.name = name;
         this.capital = capital;
         this.currencies = currencies;
         this.population = population;
+    }
+
+    public EUCountry(String name, Integer population) {
+        this.name = name;
+        this.population = population;
+    }
+
+    public EUCountry(String name, Double area) {
+        this.name = name;
         this.area = area;
-        this.independent = independent;
+    }
+
+    public EUCountry(String name, Integer population, Double area) {
+        this.name = name;
+        this.density = population/area;
     }
 
     public EUCountry() {
@@ -77,10 +91,10 @@ public class EUCountry {
     }
 
     public Double getDensity() {
-        if( area != null)
-            return population / area;
-        else
-            return null;
+        return density;
     }
 
+    public void setDensity(Double density) {
+        this.density = density;
+    }
 }
