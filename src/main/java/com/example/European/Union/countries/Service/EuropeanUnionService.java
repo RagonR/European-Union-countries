@@ -33,9 +33,7 @@ public class EuropeanUnionService {
 
         return euCountries;
     }
-
-    public List<EUCountry> displayEUCountries() {
-        List<EUCountry> euCountries = getAllCountries();
+    public List<EUCountry> displayEUCountries(List<EUCountry> euCountries) {
 
         List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
         for (EUCountry country : euCountries) {
@@ -45,8 +43,7 @@ public class EuropeanUnionService {
         return euCountriesRequiredElements;
     }
 
-    public List<EUCountry> getTop10Population() {
-        List<EUCountry> euCountries = displayEUCountries();
+    public List<EUCountry> getTop10Population(List<EUCountry> euCountries) {
 
         List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
         for (EUCountry country : euCountries) {
@@ -54,16 +51,12 @@ public class EuropeanUnionService {
             euCountriesRequiredElements.add(euCountry);
         }
 
-        Comparator<EUCountry> compareByPop =
-                (EUCountry o1, EUCountry o2) -> o1.getPopulation().compareTo(o2.getPopulation());
-
-        euCountriesRequiredElements.sort(compareByPop.reversed());
+        euCountriesRequiredElements.sort(Comparator.comparing(EUCountry::getPopulation).reversed());
 
         return euCountriesRequiredElements.stream().limit(10).collect(Collectors.toList());
     }
 
-    public List<EUCountry> getTop10Area() {
-        List<EUCountry> euCountries = getAllCountries();
+    public List<EUCountry> getTop10Area(List<EUCountry> euCountries) {
 
         List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
         for (EUCountry country : euCountries) {
@@ -71,16 +64,12 @@ public class EuropeanUnionService {
             euCountriesRequiredElements.add(euCountry);
         }
 
-        Comparator<EUCountry> compareByArea =
-                (EUCountry o1, EUCountry o2) -> o1.getArea().compareTo(o2.getArea());
-
-        euCountriesRequiredElements.sort(compareByArea.reversed());
+        euCountriesRequiredElements.sort(Comparator.comparing(EUCountry::getArea).reversed());
 
         return euCountriesRequiredElements.stream().limit(10).collect(Collectors.toList());
     }
 
-    public List<EUCountry> getTop10Density() {
-        List<EUCountry> euCountries = getAllCountries();
+    public List<EUCountry> getTop10Density(List<EUCountry> euCountries) {
 
         List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
         for (EUCountry country : euCountries) {
@@ -88,10 +77,7 @@ public class EuropeanUnionService {
             euCountriesRequiredElements.add(euCountry);
         }
 
-        Comparator<EUCountry> compareByDensity =
-                (EUCountry o1, EUCountry o2) -> o1.getDensity().compareTo(o2.getDensity());
-
-        euCountriesRequiredElements.sort(compareByDensity.reversed());
+        euCountriesRequiredElements.sort(Comparator.comparing(EUCountry::getDensity).reversed());
 
         return euCountriesRequiredElements.stream().limit(10).collect(Collectors.toList());
     }

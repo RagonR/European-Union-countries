@@ -32,7 +32,6 @@ public class EUCountry {
         this.name = name;
         this.area = area;
     }
-
     public EUCountry(String name, Integer population, Double area) {
         this.name = name;
         this.density = population/area;

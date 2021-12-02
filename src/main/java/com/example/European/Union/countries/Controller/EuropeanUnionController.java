@@ -22,21 +22,21 @@ public class EuropeanUnionController {
 
     @GetMapping("/countries")
     public List<EUCountry> getAllEUCountries() {
-        return europeanUnionService.displayEUCountries();
+        return europeanUnionService.displayEUCountries(europeanUnionService.getAllCountries());
     }
 
     @GetMapping("/countries/Top10Population")
     public List<EUCountry> getTop10Population() {
-        return europeanUnionService.getTop10Population();
+        return europeanUnionService.getTop10Population(europeanUnionService.getAllCountries());
     }
 
     @GetMapping("/countries/Top10Area")
     public List<EUCountry> getTop10Area() {
-        return europeanUnionService.getTop10Area();
+        return europeanUnionService.getTop10Area(europeanUnionService.getAllCountries());
     }
 
     @GetMapping("/countries/Top10Density")
     public List<EUCountry> getTop10Density() {
-        return europeanUnionService.getTop10Density();
+        return europeanUnionService.getTop10Density(europeanUnionService.getAllCountries());
     }
 }
