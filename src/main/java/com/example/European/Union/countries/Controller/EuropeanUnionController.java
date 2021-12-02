@@ -20,10 +20,23 @@ public class EuropeanUnionController {
         this.europeanUnionService = europeanUnionService;
     }
 
-
     @GetMapping("/countries")
-    public List<EUCountry> getAllEUCountries(){
-        return  europeanUnionService.getAllCountries();
+    public List<EUCountry> getAllEUCountries() {
+        return europeanUnionService.displayEUCountries();
     }
 
+    @GetMapping("/countries/Top10Population")
+    public List<EUCountry> getTop10Population() {
+        return europeanUnionService.getTop10Population();
+    }
+
+    @GetMapping("/countries/Top10Area")
+    public List<EUCountry> getTop10Area() {
+        return europeanUnionService.getTop10Area();
+    }
+
+    @GetMapping("/countries/Top10Density")
+    public List<EUCountry> getTop10Density() {
+        return europeanUnionService.getTop10Density();
+    }
 }
