@@ -1,0 +1,171 @@
+[
+  {
+    "name": "Not real country",
+    "capital": "Should be removed by filter",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 891720000,
+    "area": 8300008.0,
+    "independent": false
+  },
+  {
+  "name": "Austria",
+  "capital": "Vienna",
+  "currencies": [
+    {
+      "name": "Euro",
+      "symbol": "€"
+    }
+  ],
+  "population": 891720,
+  "area": 838.0,
+  "independent": true
+  },
+  {
+    "name": "Belgium",
+    "capital": "Brussels",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 115559,
+    "area": 305.0,
+    "independent": true
+  },
+  {
+    "name": "Bulgaria",
+    "capital": "Sofia",
+    "currencies": [
+      {
+        "name": "Bulgarian lev",
+        "symbol": "лв"
+      }
+    ],
+    "population": 692728,
+    "area": 1109.0,
+    "independent": true
+  },
+  {
+    "name": "Croatia",
+    "capital": "Zagreb",
+    "currencies": [
+      {
+        "name": "Croatian kuna",
+        "symbol": "kn"
+      }
+    ],
+    "population": 404720,
+    "area": 594.0,
+    "independent": true
+  },
+  {
+    "name": "Cyprus",
+    "capital": "Nicosia",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 12061,
+    "area": 9251.0,
+    "independent": true
+  },
+  {
+    "name": "Czech Republic",
+    "capital": "Prague",
+    "currencies": [
+      {
+        "name": "Czech koruna",
+        "symbol": "Kč"
+      }
+    ],
+    "population": 10698896,
+    "area": 7885.0,
+    "independent": true
+  },
+  {
+    "name": "Denmark",
+    "capital": "Copenhagen",
+    "currencies": [
+      {
+        "name": "Danish krone",
+        "symbol": "kr"
+      }
+    ],
+    "population": 58314,
+    "area": 43094.0,
+    "independent": true
+  },
+  {
+    "name": "Estonia",
+    "capital": "Tallinn",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 131057,
+    "area": 4227.0,
+    "independent": true
+  },
+  {
+    "name": "Finland",
+    "capital": "Helsinki",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 553719,
+    "area": 33424.0,
+    "independent": true
+  },
+  {
+    "name": "France",
+    "capital": "Paris",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 7391582,
+    "area": 40679.0,
+    "independent": true
+  },
+  {
+    "name": "Germany",
+    "capital": "Berlin",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 8324525,
+    "area": 35714.0,
+    "independent": true
+  },
+  {
+    "name": "Greece",
+    "capital": "Athens",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "population": 1071549,
+    "area": 13190.0,
+    "independent": true
+  }
+]

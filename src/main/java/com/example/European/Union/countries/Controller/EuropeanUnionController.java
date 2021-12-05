@@ -14,6 +14,7 @@ import java.util.List;
 public class EuropeanUnionController {
 
     private final EuropeanUnionService europeanUnionService;
+    final String URL = "https://restcountries.com/v2/regionalbloc/eu";
 
     @Autowired
     public EuropeanUnionController(EuropeanUnionService europeanUnionService) {
@@ -22,21 +23,21 @@ public class EuropeanUnionController {
 
     @GetMapping("/countries")
     public List<EUCountry> getAllEUCountries() {
-        return europeanUnionService.displayEUCountries(europeanUnionService.getAllCountries());
+        return europeanUnionService.displayEUCountries(europeanUnionService.getAllCountries(URL));
     }
 
     @GetMapping("/countries/Top10Population")
     public List<EUCountry> getTop10Population() {
-        return europeanUnionService.getTop10Population(europeanUnionService.getAllCountries());
+        return europeanUnionService.getTop10Population(europeanUnionService.getAllCountries(URL));
     }
 
     @GetMapping("/countries/Top10Area")
     public List<EUCountry> getTop10Area() {
-        return europeanUnionService.getTop10Area(europeanUnionService.getAllCountries());
+        return europeanUnionService.getTop10Area(europeanUnionService.getAllCountries(URL));
     }
 
     @GetMapping("/countries/Top10Density")
     public List<EUCountry> getTop10Density() {
-        return europeanUnionService.getTop10Density(europeanUnionService.getAllCountries());
+        return europeanUnionService.getTop10Density(europeanUnionService.getAllCountries(URL));
     }
 }

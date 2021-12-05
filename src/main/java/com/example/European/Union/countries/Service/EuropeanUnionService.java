@@ -13,13 +13,11 @@ import java.util.stream.Collectors;
 @Service
 public class EuropeanUnionService {
 
-    public List<EUCountry> getAllCountries() {
-
-        final String uri = "https://restcountries.com/v2/regionalbloc/eu";
+    public List<EUCountry> getAllCountries(String url) {
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<EUCountry[]> responseEntity =
-                restTemplate.getForEntity(uri, EUCountry[].class);
+                restTemplate.getForEntity(url, EUCountry[].class);
 
         EUCountry[] euCountries_data = responseEntity.getBody();
 
