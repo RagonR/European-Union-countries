@@ -1,7 +1,7 @@
 package com.example.European.Union.countries.dto;
 
-import com.fasterxml.jackson.annotation.*;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class EUCountry {
     public boolean independent;
     public Double density;
 
-     public EUCountry(String name, String capital, List<Currency> currencies, Integer population) {
+    public EUCountry(String name, String capital, List<Currency> currencies, Integer population) {
         this.name = name;
         this.capital = capital;
         this.currencies = currencies;
@@ -32,9 +32,10 @@ public class EUCountry {
         this.name = name;
         this.area = area;
     }
+
     public EUCountry(String name, Integer population, Double area) {
         this.name = name;
-        this.density = population/area;
+        this.density = population / area;
     }
 
     public EUCountry() {

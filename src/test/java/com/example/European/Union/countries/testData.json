@@ -39,17 +39,17 @@
     "independent": true
   },
   {
-    "name": "Bulgaria",
-    "capital": "Sofia",
+    "name": "Fake country",
+    "capital": "Fake capital",
     "currencies": [
       {
-        "name": "Bulgarian lev",
-        "symbol": "лв"
+        "name": "Euro",
+        "symbol": "€"
       }
     ],
     "population": 692728,
     "area": 1109.0,
-    "independent": true
+    "independent": false
   },
   {
     "name": "Croatia",

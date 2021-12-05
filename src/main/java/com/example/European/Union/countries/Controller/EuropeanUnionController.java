@@ -13,8 +13,8 @@ import java.util.List;
 @RequestMapping("api/eu")
 public class EuropeanUnionController {
 
-    private final EuropeanUnionService europeanUnionService;
     final String URL = "https://restcountries.com/v2/regionalbloc/eu";
+    private final EuropeanUnionService europeanUnionService;
 
     @Autowired
     public EuropeanUnionController(EuropeanUnionService europeanUnionService) {

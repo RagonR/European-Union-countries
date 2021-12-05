@@ -13,6 +13,18 @@ import java.util.stream.Collectors;
 @Service
 public class EuropeanUnionService {
 
+
+    public List<EUCountry> filterIndependentEUCountries(EUCountry[] euCountries_data) {
+        List<EUCountry> euCountries = new ArrayList<EUCountry>();
+
+        for (EUCountry entry : euCountries_data) {
+            if (entry.isIndependent())
+                euCountries.add(entry);
+        }
+
+        return euCountries;
+    }
+
     public List<EUCountry> getAllCountries(String url) {
 
         RestTemplate restTemplate = new RestTemplate();
@@ -21,16 +33,10 @@ public class EuropeanUnionService {
 
         EUCountry[] euCountries_data = responseEntity.getBody();
 
-        List<EUCountry> euCountries = new ArrayList<EUCountry>();
-
         assert euCountries_data != null;
-        for (EUCountry entry : euCountries_data) {
-            if (entry.isIndependent())
-                euCountries.add(entry);
-        }
-
-        return euCountries;
+        return filterIndependentEUCountries(euCountries_data);
     }
+
     public List<EUCountry> displayEUCountries(List<EUCountry> euCountries) {
 
         List<EUCountry> euCountriesRequiredElements = new ArrayList<EUCountry>();
