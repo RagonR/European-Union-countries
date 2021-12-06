@@ -1,4 +1,4 @@
-package com.example.European.Union.countries.Service;
+package com.example.European.Union.countries.service;
 
 import com.example.European.Union.countries.dto.EUCountry;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class EuropeanUnionService {
+public class EuropeanUnionService implements EuropeanUnionServiceInterface {
 
 
     public List<EUCountry> filterIndependentEUCountries(EUCountry[] euCountries_data) {

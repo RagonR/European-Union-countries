@@ -1,7 +1,7 @@
-package com.example.European.Union.countries.Controller;
+package com.example.European.Union.countries.controller;
 
-import com.example.European.Union.countries.Service.EuropeanUnionService;
 import com.example.European.Union.countries.dto.EUCountry;
+import com.example.European.Union.countries.service.EuropeanUnionServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +14,10 @@ import java.util.List;
 public class EuropeanUnionController {
 
     final String URL = "https://restcountries.com/v2/regionalbloc/eu";
-    private final EuropeanUnionService europeanUnionService;
+    private final EuropeanUnionServiceInterface europeanUnionService;
 
     @Autowired
-    public EuropeanUnionController(EuropeanUnionService europeanUnionService) {
+    public EuropeanUnionController(EuropeanUnionServiceInterface europeanUnionService) {
         this.europeanUnionService = europeanUnionService;
     }
 

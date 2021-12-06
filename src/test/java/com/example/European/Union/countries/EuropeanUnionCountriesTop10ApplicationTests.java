@@ -1,8 +1,9 @@
 package com.example.European.Union.countries;
 
-import com.example.European.Union.countries.Controller.EuropeanUnionController;
-import com.example.European.Union.countries.Service.EuropeanUnionService;
+import com.example.European.Union.countries.controller.EuropeanUnionController;
+import com.example.European.Union.countries.service.EuropeanUnionService;
 import com.example.European.Union.countries.dto.EUCountry;
+import com.example.European.Union.countries.service.EuropeanUnionServiceInterface;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,7 @@ class EuropeanUnionCountriesTop10ApplicationTests {
     private EuropeanUnionController europeanUnionController;
 
     @Autowired
-    private EuropeanUnionService europeanUnionService;
+    private EuropeanUnionServiceInterface europeanUnionService;
 
 
     public EUCountry[] getTestData() throws Exception {
