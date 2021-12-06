@@ -16,8 +16,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class EuropeanUnionCountriesTop10ApplicationTests {
@@ -32,29 +31,29 @@ class EuropeanUnionCountriesTop10ApplicationTests {
     public EUCountry[] getTestData() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         InputStream testDataLocation = new FileInputStream("src/test/java/com/example/European/Union/countries/testData.json");
-        EUCountry[] euCountries = mapper.readValue(testDataLocation, EUCountry[].class);
-        return euCountries;
+        return mapper.readValue(testDataLocation, EUCountry[].class);
     }
 
 
     @Test
     @DisplayName("Controller loader")
-    public void contextLoads() throws Exception {
-        assertThat(europeanUnionController).isNotNull();
+    public void contextLoads() {
+        assertNotNull(europeanUnionController);
     }
 
     @Test
     @DisplayName("Service loader")
-    public void serviceLoads() throws Exception {
-        assertThat(europeanUnionService).isNotNull();
+    public void serviceLoads() {
+        assertNotNull(europeanUnionService);
     }
 
     @Test
     @DisplayName("API data access")
-    public void BadURLProvided() throws Exception {
+    public void BadURLProvided() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<EUCountry[]> responseEntity =
                 restTemplate.getForEntity("https://restcountries.com/v2/regionalbloc/eu", EUCountry[].class);
+        assertNotNull(responseEntity);
     }
 
     @Test
